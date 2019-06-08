@@ -238,7 +238,7 @@ def DetectNet(lr,input_shape,filter_num,lstm_units,kernel_size,drop_ratio,lstm_d
     x2 = Convolution1D(filter_num,kernel_size,padding='same',data_format='channels_first',activation='relu')(x1)
     x2 = Dropout(rate=drop_ratio)(x2)
     x3 = Flatten()(x2)
-    x4 = Dense(dense_units,activation='relu')(x3)
+    x4 = Dense(input_shape[-1],activation='linear')(x3)
     x4 = Reshape(target_shape=(1,input_shape[-1]))(x4)
     
     LSTMInput = concatenate([x4,ConvInput],axis=1)
