@@ -19,7 +19,7 @@ dense_units = 128
 sample_length = 128
 max_epoch = 100
 batch_size = 200
-patience = 15
+patience = 10
 
 # load data
 filename = 'pkl_data/'+str(sample_length)+'.pkl'
