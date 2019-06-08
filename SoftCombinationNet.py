@@ -12,7 +12,7 @@ drop_ratio = 0.2
 sample_length = 128 
 max_epoch = 100
 batch_size = 200
-patience = 15
+patience = 10
 
 # load data
 dataset,labelset,SNR = utils.radioml_IQ_CO_data('pkl_data/'+str(sample_length)+'_co.pkl')
