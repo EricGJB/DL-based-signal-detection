@@ -243,7 +243,6 @@ def DetectNet(lr,input_shape,filter_num,lstm_units,kernel_size,drop_ratio,lstm_d
     x4 = Reshape(target_shape=(1,input_shape[-1]))(x4)
     
     LSTMInput = concatenate([x4,ConvInput],axis=1)
-    LSTMInput = Reshape(target_shape=(input_shape[-1],3))(LSTMInput)
     
     y1 = LSTM(units=lstm_units,return_sequences=True,recurrent_dropout=lstm_drop_ratio,input_shape=(input_shape[-1],3))(LSTMInput)
     y2 = LSTM(units=lstm_units,dropout=lstm_drop_ratio)(y1) 
